@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel='stylesheet' type='text/css' href='css/styles.css'>
+	<meta charset="UTF-8">
+
+	<script src="js/underscore.js"></script>
+	<script src="js/lodash.js"></script>
+	<script src="js/d3.js"></script>
+	<script src='https://code.jquery.com/jquery-3.1.0.min.js'></script>
+	<script src='js/main.js'></script>
+	
+</head>
+<body>
+	<div class='overlay' id='block'></div>
+	<!-- PreStudyStartInfo -->
+	<div class='infoClass allDiv' id='preStudyStartInfo'>
+		<div class='textDiv' id='infoTextDiv'>
+			<h1 class='infoH1'>Instruktioner</h1>
+			<p class='infoP'>
+				Du kommer att få studera 48 ordpar (t.ex. apa - apelsin).<br>
+				Försök lära dig så många av ordparen som möjligt.
+			</p>
+			<p class='infoP'>
+				Det är viktigt att du inte använder någon hjälp, såsom anteckningar eller miniräknare. <br>
+			</p>
+			<p class='infoP'>
+				Experimentet består av följande delar:
+			</p>
+			<p class='infoP'>
+				1. Bedöma ordparen:<br>
+				- Ordparen visas ett i taget och du ska bedöma hur sannolikt det är att du kommer att kunna lära dig dem till minnestestet.
+			</p>
+			<p class='infoP'>
+				2. Matematik<br>
+				- Matematiska ekvationer visas på skärmen och du ska försöka lösa så många som möjligt på 30 sekunder.
+			</p>
+			<p class='infoP'>
+				3. Studera ordparen:<br>
+				- Ordparen visas på skärmen ett i taget i 5 sekunder vardera och du ska försöka lära dig dessa.
+			</p>
+			<p class='infoP'>	
+				4. Matematik<br>
+				- Matematiska ekvationer visas på skärmen och du ska försöka lösa så många som möjligt på 30 sekunder.
+			</p>
+			<p class='infoP'>
+				5. Minnestest:<br>
+				- Du får se enbart det första ordet i varje ordpar (t.ex. apa - ?) och ska då skriva det andra ordet (t.ex. apelsin) på tangentbordet. <br>
+				- Orden visas ett i taget och du har 15 sekunder på dig att svara.
+			</p>
+			<p class='infoP'>
+				Du kommer att få detaljerad information om varje del innan de börjar.
+
+			</p>
+		</div>
+		<div class='button' id='startInfoButton'>Fortsätt</div>
+	</div>
+	<!-- PostStudyStartInfo -->
+	<div class='infoClass allDiv' id='postStudyStartInfo'>
+		<div class='textDiv' id='infoTextDiv'>
+			<h1 class='infoH1'>Instruktioner</h1>
+			<p class='infoP'>
+				Du kommer att få studera 48 ordpar (t.ex. apa - apelsin).<br>
+				Försök lära dig så många av ordparen som möjligt.
+			</p>
+			<p class='infoP'>
+				Det är viktigt att du inte använder någon hjälp, såsom anteckningar eller miniräknare. <br>
+			</p>
+			<p class='infoP'>
+				Experimentet består av följande delar:
+			</p>
+			<p class='infoP'>
+				1. Studera ordparen:<br>
+				- Ordparen visas på skärmen ett i taget i 5 sekunder vardera och du ska försöka lära dig dessa.
+			</p>
+			<p class='infoP'>
+				2. Matematik<br>
+				- Matematiska ekvationer visas på skärmen och du ska försöka lösa så många som möjligt på 30 sekunder.
+			</p>
+			<p class='infoP'>
+				2. Bedöma ordparen:<br>
+				- Ordparen visas ett i taget och du ska bedöma hur sannolikt det är att du kommer att minnas dem på minnestestet.
+			</p>
+			<p class='infoP'>	
+				4. Matematik<br>
+				- Matematiska ekvationer visas på skärmen och du ska försöka lösa så många som möjligt på 30 sekunder.
+			</p>
+			<p class='infoP'>
+				5. Minnestest:<br>
+				- Du får se enbart det första ordet i varje ordpar (t.ex. apa - ?) och ska då skriva det andra ordet (t.ex. apelsin) på tangentbordet. <br>
+				- Orden visas ett i taget och du har 15 sekunder på dig att svara.
+			</p>
+			<p class='infoP'>
+				Du kommer att få detaljerad information om varje del innan de börjar.
+
+			</p>
+		</div>
+		<div class='button' id='startInfoButton'>Fortsätt</div>
+	</div>
+	<!-- studyInfo -->
+	<div class='infoClass allDiv' id='studyInfo'>
+		<div class='textDiv' id='infoTextDiv'>
+			<h1 class='infoH1'>Studera ordparen</h1>
+			<p class='infoP'>
+			Du kommer nu att få studera ordparen ett i taget i 5 sekunder vardera. <br>
+			</p>
+		</div>
+		<div class='button' id='studyInfoButton'>Fortsätt</div>
+	</div>
+	<!-- testInfo -->
+	<div class='infoClass allDiv' id='testInfo'>
+		<div class='textDiv' id='infoTextDiv'>
+			<h1 class='infoH1'>Minnestest</h1>
+			<p class='infoP'>
+				Du kommer nu få se det första ordet i varje ordpar (t.ex. apa - ?) och ska skriva det andra (t.ex. apelsin) i rutan nedanför.
+			</p>
+			<p class='infoP'>
+				- Skriv ditt svar på tangentbordet och tryck på ENTER när du skrivit klart. <br>
+				- Om du inte kommer ihåg ordet kan du gå vidare till nästa genom att trycka på ENTER. <br>
+				- Om du inte tryckt på ENTER inom 15 sekunder går programmet automatiskt vidare till nästa ordpar.<br>
+			</p>
+		</div>
+		<div class='button' id='testInfoButton'>Fortsätt</div>
+	</div>
+	<!-- EOLratingInfo -->
+	<div class='infoClass allDiv' id='EOLRatingInfo'>
+		<div class='textDiv' id='infoTextDiv'>
+			<h1 class='infoH1'>Bedömningar</h1>
+			<p class='infoP'>Du kommer nu att få se varje ordpar (t.ex. apa - apelsin). Din uppgift är att bedöma hur sannolikt det är att du, till det kommande testet, kommer att kunna lära dig att minnas det andra ordet (apelsin) när du bara får se det första (apa - ?).<br>
+			</p>
+			<p class='infoP'>
+			- Ordparen presenteras ett i taget. <br>
+			- Fokusera på att göra din bedömning och undvik att aktivt studera ordparen.<br>
+			</p>
+			<p class='infoP'>
+			- Du kommer göra dina bedömningar på en skala som går från 0% till 100% i intervaller av 20%.<br>
+			- När du använder skalan, tänk att av alla de ordpar du ger en viss procent kommer du att ha lärt dig just så många procent av dessa ordpar till testet. <br>
+			- Till exempel: av alla de ordpar som får bedömningen 20% kommer du att lära dig just 20% av dessa till testet.<br>
+			</p>
+		</div>
+		<div class='button' id='EOLRatingInfoButton'>Fortsätt</div>
+	</div>
+	<!-- ctJOLratingInfo -->
+	<div class='infoClass allDiv' id='ctJOLRatingInfo'>
+		<div class='textDiv' id='infoTextDiv'>
+			<h1 class='infoH1'>Bedömningar</h1>
+			<p class='infoP'>Du kommer nu att få se varje ordpar (t.ex. apa - apelsin). Din uppgift är att bedöma hur sannolikt det är att du, på det kommande testet, kommer att minnas det andra (apelsin) när du bara får se det första (apa - ?).<br>
+			</p>
+			<p class='infoP'>
+			- Ordparen presenteras ett i taget. <br>
+			- Fokusera på att göra din bedömning och undvik att aktivt studera ordparen.<br>
+			</p>
+			<p class='infoP'>
+			- Du kommer göra dina bedömningar på en skala som går från 0% till 100% i intervaller av 20%.<br>
+			- När du använder skalan, tänk att av alla de ordpar du ger en viss procent kommer du att minnas just så många procent av dessa ordpar på testet. <br>
+			- Till exempel: av alla de ordpar som får bedömningen 20% kommer du att minnas just 20% av dessa på testet.<br>
+			</p>
+		</div>
+		<div class='button' id='ctJOLRatingInfoButton'>Fortsätt</div>
+	</div>
+<!-- coJOLratingInfo -->
+	<div class='infoClass allDiv' id='coJOLRatingInfo'>
+		<div class='textDiv' id='infoTextDiv'>
+			<h1 class='infoH1'>Bedömningar</h1>
+			<p class='infoP'>Du kommer nu att få se de första ordet i varje ordpar (t.ex. apa - ?). Din uppgift är att bedöma hur sannolikt det är att du, på det kommande testet, kommer att minnas det andra (apelsin) när du bara får se det första (apa - ?).<br>
+			</p>
+			<p class='infoP'>
+			- Ordparen presenteras ett i taget. <br>
+			- Fokusera på att göra din bedömning och undvik att aktivt studera ordparen.<br>
+			</p>
+			<p class='infoP'>
+			- Du kommer göra dina bedömningar på en skala som går från 0% till 100% i intervaller av 20%.<br>
+			- När du använder skalan, tänk att av alla de ordpar du ger en viss procent kommer du att minnas just så många procent av dessa ordpar på testet. <br>
+			- Till exempel: av alla de ordpar som får bedömningen 20% kommer du att minnas just 20% av dessa på testet.<br>
+			</p>
+		</div>
+		<div class='button' id='coJOLRatingInfoButton'>Fortsätt</div>
+	</div>
+
+
+	<!-- distratctionInfo -->
+	<div class='infoClass allDiv' id='distInfo'>
+		<div class='textDiv' id='infoTextDiv'>
+			<h1 class='infoH1'>Matematik i 30 sekunder</h1>
+			<p class='infoP'>Du kommer nu att få se matematiska ekvationer och ska avgöra om de är korrekta eller inte.</p>
+			<p class='infoP'>Du svarar genom att klicka på antingen "ja" eller "nej".</p>
+			<p class='infoP'>Försök lösa så många som möjligt. Om du är säker på att du inte kan lösa en ekvation kan du gissa på svaret.</p>
+		</div>
+		<div class='button' id='distInfoButton'>Fortsätt</div>
+	</div>
+
+	<!-- after exp info -->
+	<div class='afterExpClass allDiv' id= 'afterExpID'>
+		<div class='textDiv' id='afterExpTextDiv'>
+			<p class="form_info">Nu är du klar med experimentsdelen av ditt deltagande och vi har sparat din data. Nu har vi bara några korta frågor innan du är klar. Om du angett att du vill ha EE för att delta kommer du få dessa oavsett vad du svarar på följande frågor.</p>
+			<br>
+			<p> Hur väl tror du dina bedömningar stämmer överens med ditt resultat på minnestestet?</p>
+			<form>
+			  Väldigt dåligt
+			  <input class="ratingRadio" type="radio" name="ratingRating" value="1"> - 
+			  <input class="ratingRadio" type="radio" name="ratingRating" value="2"> - 
+			  <input class="ratingRadio" type="radio" name="ratingRating" value="3"> - 
+			  <input class="ratingRadio" type="radio" name="ratingRating" value="4"> - 
+			  <input class="ratingRadio" type="radio" name="ratingRating" value="5">
+			   Väldigt bra
+			</form>
+			<br>
+			<p>Kände du igen något av ordparen från ett experiment du deltagit i tidigare?</p>
+			<form>
+			  <input type="radio" name="recogItems" value="no"> Nej<br>
+			  <input type="radio" name="recogItems" value="no"> Ja
+			</form>
+			<br>
+			<p>Blev du störd under experimentet på något sätt som du tror skulle kunna påverka dina resultat?</p>
+			<form>
+			  <input type="radio" name="disturbed" value="no"> Nej<br>
+			  <input type="radio" name="disturbed" value="yes"> Ja
+			</form>
+			<p> Om ja. Hur blev du störd?</p>
+			<input type="endText" id='disturbedText'>
+			<br>
+			<p>Hur mycket ansträngde du dig för att göra korrekta bedömningar av ordparen?</p>
+			<form>
+			  Väldigt lite 
+			  <input class="ratingRadio" type="radio" name="ratingEffort" value="1"> - 
+			  <input class="ratingRadio" type="radio" name="ratingEffort" value="2"> - 
+			  <input class="ratingRadio" type="radio" name="ratingEffort" value="3"> - 
+			  <input class="ratingRadio" type="radio" name="ratingEffort" value="4"> - 
+			  <input class="ratingRadio" type="radio" name="ratingEffort" value="5">
+			   Väldigt mycket
+			</form>
+			<br>
+			<p>Hur mycket ansträngde du dig för att lära dig ordparen?</p>
+			<form>
+			  Väldigt lite 
+			  <input class="ratingRadio" type="radio" name="studyEffort" value="1"> - 
+			  <input class="ratingRadio" type="radio" name="studyEffort" value="2"> - 
+			  <input class="ratingRadio" type="radio" name="studyEffort" value="3"> - 
+			  <input class="ratingRadio" type="radio" name="studyEffort" value="4"> - 
+			  <input class="ratingRadio" type="radio" name="studyEffort" value="5">
+			   Väldigt mycket
+			</form>
+			<br>
+		</div>
+		<div class='button' id='button'>Fortsätt</div>
+	</div>
+
+	<!-- endInfo -->
+	<div class='infoClass allDiv' id='endInfo'>
+		<div class='textDiv' id='infoTextDiv'>
+			<h1 class='infoH1'>Nu är experimentet slut</h1>
+			<p class='infoP'>Tack så mycket för att du har deltagit. </p>
+			<p class='infoP'>Om du har några frågor kan du maila dessa till andreas.jemstedt@psychology.su.se.</p><br>
+			<p class='infoP'>Om du angav att du ville ha EE-tid kommer denna att rapporteras till expeditionen inom ungefär två veckor. Om det är viktigt att din tid rapporteras tidigare får du gärna skicka mig ett e-post om detta, så meddelar jag expeditionen så fort jag kan. </p>
+		</div>
+	</div>
+
+	<!-- consent screen-->
+	<div class='consentClass allDiv' id= 'consent'>
+		<div class='textDiv' id='consentTextDiv'>
+			<h1 class="infoP">Välkommen</h1>
+			<p class="infoP">
+			I detta experiment kommer du att studera ordpar (t.ex. apa - apelsin). I slutet av experimentet testas hur väl du kan minnas det andra ordet (apelsin) när du bara får se det första (apa - ?). Utöver detta kommer du även få göra bedömningar av ordparen och räkna matematik. Mer information om experimentets alla delar kommer senare. <br>
+			</p>
+			<p class="infoP">
+			Om du, genom att trycka på "fortsätt till studien", väljer att delta i experimentet kommer du att vara helt anonym. Inga data vi samlar in kommer att kunna kopplas till dig på något sätt. Du har rätt att avbryta ditt deltagande när du vill, utan att ge någon förklaring. Om du avbryter experimentet innan det är slut, genom att stänga ner hemsidan, sparas ingen information. Experimentet tar ungefär 20 minuter att genomföra och om du är student vid Psykologiska institutionen på Stockholms universitet får du 30 minuter EE-tid (experimentella erfarenheter) för att delta.<br>
+			</p>
+			<p class="infoP">
+			När du deltar i experimentet är det viktigt att du befinner dig i en lugn miljö så att du inte blir störd. Vi vill även att du stänger ner alla andra flikar och fönster i din webbläsare och stänger av din telefon innan du påbörjar experimentet. <br>
+			</p>
+			<p class="infoP">
+			Genom att klicka på "Fortsätt till studien" ger du ditt samtycke till att medverka i studien. Om du inte vill medverka i studien ska du klicka på avbryt eller stänga hemsidan.<br>
+			</p>
+		</div>
+		<div class='buttonContainer'>
+			<div class='consentFormButton' id='cancelButton'>Avbryt</div>
+			<div class='consentFormButton' id='consentButton'>Fortsätt till studien</div>
+		</div>
+	</div>
+
+	<!-- cancel screen --> 
+	<div class='cancelScreen allDiv'>
+		<div class='textDiv' id='cancelTextDiv'>
+			Du har valt att avbryta din medverkan i studien. Om du har några frågor om studien kan du maila dessa till andreas.jemstedt@psychology.su.se.
+		</div>
+	</div>
+
+	<!-- Background info --> 
+	<div class='backgroundClass allDiv' id= 'backgroundID'>
+		<div class='textDiv' id='backgroundTextDiv'>
+			<p class="form_info">Innan experimentet börjar behöver vi lite information om dig.</p>
+			<p>När du fyllt i din information kan du klicka på knappen längst ner för att fortsätta</p>
+			<form>
+			<p>Är det här första gången du deltar i det här experimentet?</p>
+			  <input type="radio" name="firstTime" value="yes" checked> Ja
+			  <input type="radio" name="firstTime" value="no"> Nej
+			</form>
+			<br>
+			<form>
+			<p>Ange ditt kön:</p>
+			  <input type="radio" name="gender" value="female"> Kvinna
+			  <input type="radio" name="gender" value="male"> Man
+			  <input type="radio" name="gender" value="annat"> Annat
+			</form>
+			<br>
+			<p>Ange din ålder i antal år:</p>
+			<form>
+			  <input type="text" id='age'>   
+			  <p class='exampleP'>T.ex. 31.</p>
+			</form>
+			<br>
+			<form>
+			<p>Är du student på Psykologiska institutionen vid Stockholms universitet?</p>
+			  <input type="radio" id='SU_yes' name="psychSU_student" value="yes" checked> Ja
+			  <input type="radio" id='SU_no' name="psychSU_student" value="no"> Nej
+			</form>
+			<form>
+			<p>Vill du ha 30 minuter EE-tid (experimentella erfarenheter) för att delta?</p>
+			  <input type="radio" id='SU_yes' name="EE_radio" value="yes" checked> Ja
+			  <input type="radio" id='SU_no' name="EE_radio" value="no"> Nej
+			</form>
+			<form id='course_credit_form'>
+				<p class="form_info">
+				Om du är student på Stockholms universitsts psykologiska institution och vill ha EE-tid (experimentella erfarenheter) ska du fylla i fälten här nedanför. Obeservera att du endast får EE-tid första gången du deltar i experimentet.
+				<p>
+				<p>Förnamn:</p>
+				<input type="text" id='fname'>
+				<p> Efternamn:</p>
+				<input type="text" id='lname'>
+				<p>Kurs:</p>
+				<input type="text" id='course'>   
+				<p class='exampleP'>T.ex. Psykologi II.</p>
+				<p>De 6 första siffrorna i ditt personnummer:</p>
+				<input type="text" id='pNr'> 
+				<p class='exampleP'>T.ex. 850124.</p>
+			</form>
+			<br>
+		</div>
+		<div class='button' id='button'>Fortsätt</div>
+	</div>
+
+	
+  	<!-- Study --> 
+  	<div class='outerStim allDiv' id='outerStudy'>
+	  	<div class='middleStim' id='middleStudy'>
+	  		<div class='stim' id='studyStim'>Hide later</div>
+		</div>
+	</div>
+	<!-- Ratings --> 
+	<div class='outerStim allDiv' id='outerRating'>
+	  	<div class='middleStim' id='middleRating'>
+	  		<div class='ratingQuestionText' id='ratingQuestion'>Rating question</div>
+	  		<div class='stim' id='ratingStim'>Hide later</div>
+	  		<div class='buttonContainer'>
+		  		<div class='ratingButton' id=ratingB0>0%</div>
+		  		<div class='ratingButton' id=ratingB20>20%</div>
+		  		<div class='ratingButton' id=ratingB40>40%</div>
+		  		<div class='ratingButton' id=ratingB60>60%</div>
+		  		<div class='ratingButton' id=ratingB80>80%</div>
+		  		<div class='ratingButton' id=ratingB100>100%</div>
+	  		</div> 
+		</div>
+	</div> 
+	<!-- Distraction -->
+	<div class='outerStim allDiv' id='outerDist'>
+	  	<div class='middleStim' id='middleDist'>
+	  		<div class='ratingQuestionText' id='distQuestion'>Stämmer ekvationen?</div>
+	  		<div class='stim' id='distStim'>Hide later</div>
+	  		<div class='buttonContainer'>
+		  		<div class='distButton' id=distYes>Ja</div>
+		  		<div class='distButton' id=distNo>Nej</div>
+	  		</div> 	  		
+		</div>
+	</div> 
+	<!-- Test -->
+	<div class='outerStim allDiv' id='outerTest'>
+	  	<div class='middleStim' id='middleTest'>
+	  		<div class='stim' id='testStim'>Hide later</div>
+	  		<div class='textInput' id='testInput'></div>
+		</div>
+	</div>	
+</body>
+</html>

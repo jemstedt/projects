@@ -1,0 +1,13 @@
+ItemType	ItemNr	Item	ItemDiff	NoteReadingItemText
+main	1	pic1	1	x
+main	2	pic2	1	x
+main	3	pic3	1	x
+main	4	pic4	1	x
+main	5	pic5	1	x
+main	6	pic6	1	x
+main	7	pic7	1	x
+main	8	pic8	1	x
+noteReading	NR1	noteReading1	1	ABC
+noteReading	NR2	noteReading2	1	ABC
+noteReading	NR3	noteReading3	1	ABC
+noteReading	NR4	noteReading4	1	ABC

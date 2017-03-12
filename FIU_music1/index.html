@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel='stylesheet' type='text/css' href='css/styles.css'>
+	<meta charset="UTF-8">
+
+	<script src="js/underscore.js"></script>
+	<script src="js/lodash.js"></script>
+	<script src="js/d3.js"></script>
+	<script src='https://code.jquery.com/jquery-3.1.0.min.js'></script>
+	<script src='js/main.js'></script>
+	
+</head>
+<body>
+	<div class='overlay' id='block'></div>
+	<!-- startInfo -->
+	<div class='infoClass allDiv' id='startInfo'>
+		<div class='textDiv' id='infoTextDiv'>
+			<h1 class='infoH1'>General instructions</h1>
+			<p class='infoP'>
+				It is important that you only participate in this experiment if you are using a laptop or a stationary computer that has a keyboard. If you are using a device with a touch screen you will not be able to complete the experiment.<br>
+				If you end the experiment before completing it (by closing the browser window) none of your data will be saved except for your consent form. <br>
+				You are not allowed to use any external help to learn any of the words (e.g., writing them on a notepad).<br>
+				Please turn off your phone and close all programs and other browser windows before continuing with the experiment.<br>
+				
+			</p>
+			<h4 class=infoH1>Below is the general outline of the experiment.</h4>
+			<p>
+				- Rate 20 words on how likely it is that you will learn each one for the memory test.<br>
+				- Study the words for 5 seconds each.<br>
+				- Judge the correctness of mathematical equations for 30 seconds.<br>
+				- Memory test. You Have 3 minutes to type as many of the studied words on the keyboard as you can remember.<br>
+				- A short questionnaire about the experiment.<br>
+			</p>
+			<p>You will receive more specific instructions before the start of each part of the experiment.</p>
+		</div>
+		<div class='button' id='startInfoButton'>Continue</div>
+	</div>
+
+	<!-- testInfo -->
+	<div class='infoClass allDiv' id='testInfo'>
+		<div class='textDiv' id='infoTextDiv'>
+			<h1 class='infoH1'>Memory test</h1>
+			<p class='infoP'>
+				You will now have 180 seconds (3 minutes) to recall as many of the words as possible. You cannot end the test before the 180 seconds has ended. 
+			</p>
+			<p class='infoP'>
+				- You respond by typing the words on the keyboard and then pressing the ENTER key after each word. <br>
+				- You DO NOT have to recall if the words were presented with upper-case letters or if they alternated between upper- and lower-case letters. <br>
+				- That is, all your responses can be given in lower-case letters, and will still be scored as correct. <br>
+				- It is important that you spell the words correct.
+			</p>
+		</div>
+		<div class='button' id='testInfoButton'>Continue</div>
+	</div>
+
+	<!-- studyRatingInfo -->
+	<div class='infoClass allDiv' id='studyRatingInfo'>
+		<div class='textDiv' id='infoTextDiv'>
+			<h1 class='infoH1'>Ratings</h1>
+			<p class='infoP'>
+			Please read carefully.<br>
+			You will now be presented with 20 words one at a time. For each word, your task is to rate how likely it is that you will learn it for the memory test at the end of the experiment. After rating all of the words, you will study them one at a time for 5 seconds each. Then after studying the words you will judge the correctness of mathematical equations for 30 seconds, and then complete a memory test.  <br>
+			</p>
+			<p class='infoP'>
+			- You have 5 seconds to rate each word, it is important that you try to rate all of the words.
+			- The experiment proceeds to the next word once you've rated it or the 5 seconds have passed.
+			- Out of the 20 words, 10 will be presented in only upper-case letters (e.g., LETTER) and 10 will be presented with alternating upper- and lower-case letters (e.g., lEtTeR).<br>
+			- In this rating part of the experiment, focus on rating the words and try to avoid actively studying them.<br>
+			- When you later study each word, they will be presented in the same way as when you rated them. That is, with either only upper-case letters or alternating upper- and lower-case letters.<br>
+			- On the memory test, you DO NOT have to recall how the words were presented, or in what order they were presented. That is, all your responses can be given in lower-case letters, and will still be scored as correct.
+			</p>
+			<p class='infoP'>
+			- You will rate the words on a scale from 0% to 100% in intervals of 20%. <br>
+			- You rate the words by clicking on the button corresponding to each percentage on the screen (e.g., 20%).<br>
+			- When you use the scale, try to rate the words so that out of all the words rated with a percentage, you will recall that many of the words on the memory test. <br>
+			- For example: Out of all the words you rated as 20%, you will recall 20% of these on the memory test.<br>
+			</p>
+		</div>
+		<div class='button' id='EOLRatingInfoButton'>Continue</div>
+	</div>
+
+	<!-- noteReadingInfo -->
+	<div class='infoClass allDiv' id='noteReadingInfo'>
+		<div class='textDiv' id='infoTextDiv'>
+			<h1 class='infoH1'>Note reading test</h1>
+			<p class='infoP'>
+			Note reading info <br>
+			</p>
+		</div>
+		<div class='button' id='noteInfoButton'>Continue</div>
+	</div>
+
+
+	<!-- distratctionInfo -->
+	<div class='infoClass allDiv' id='distInfo'>
+		<div class='textDiv' id='infoTextDiv'>
+			<h1 class='infoH1'>30 seconds of math</h1>
+			<p class='infoP'>You will now be presented matematical equations and your task is to judge if they are correct or not. </p>
+			<p class='infoP'>You answer by clicking on "Yes" or "No".</p>
+			<p class='infoP'>Try to solve as many as possible.</p>
+		</div>
+		<div class='button' id='distInfoButton'>Continue</div>
+	</div>
+
+	<!-- after exp info --> 
+	<div class='afterExpClass allDiv' id= 'afterExpID'>
+		<div class='textDiv' id='afterExpTextDiv'>
+			<p class="form_info">Now, before you're done with the experiment, we just have a couple of short questions. You will recieve your course credit independent of what you answer on these questions. </p>
+			<br>
+			<p>Which of the presentation methods do you believe made the words more likely to be learned?</p>
+			<form>
+			  <input type="radio" name="belief" value="constant"> Only upper-case letters<br>
+			  <input type="radio" name="belief" value="alternating"> Alternating upper- and lower-case letters<br>
+			  <input type="radio" name="belief" value="same"> No difference
+			</form>
+			<p>Is English your first language?</p>
+			<form>
+			  <input type="radio" name="firstEnglish" value="no"> No<br>
+			  <input type="radio" name="firstEnglish" value="yes"> Yes
+			</form>
+			<p> If no, what is your first language?</p>
+			<input type="backgroundText" id='languageText'>
+			<br>
+			<br>
+			<p>Where you disturbed by anything in your surrounding during the experiment?</p>
+			<form>
+			  <input type="radio" name="disturbed" value="no"> No<br>
+			  <input type="radio" name="disturbed" value="yes"> Yes
+			</form>
+			<p> If yes, how were you disturbed?</p>
+			<input type="backgroundText" id='disturbedText'>
+			<br>
+			<p>How much effort did put into make accurate judgments?</p>
+			<form>
+			  Very little
+			  <input class="ratingRadio" type="radio" name="ratingEffort" value="1"> - 
+			  <input class="ratingRadio" type="radio" name="ratingEffort" value="2"> - 
+			  <input class="ratingRadio" type="radio" name="ratingEffort" value="3"> - 
+			  <input class="ratingRadio" type="radio" name="ratingEffort" value="4"> - 
+			  <input class="ratingRadio" type="radio" name="ratingEffort" value="5">
+			  Very much
+			</form>
+			<br>
+			<p>How much effort did put into learning the words?</p>
+			<form>
+			  Very little
+			  <input class="ratingRadio" type="radio" name="studyEffort" value="1"> - 
+			  <input class="ratingRadio" type="radio" name="studyEffort" value="2"> - 
+			  <input class="ratingRadio" type="radio" name="studyEffort" value="3"> - 
+			  <input class="ratingRadio" type="radio" name="studyEffort" value="4"> - 
+			  <input class="ratingRadio" type="radio" name="studyEffort" value="5">
+			  Very much
+			</form>
+			<br>
+			<p>What type of computer did you use during this experiment?</p>
+			<input type="endText" id='computerText'>
+			<p class='exampleP'>E.g., Stationary.</p>
+		</div>
+		<div class='button' id='button'>Continue</div>
+	</div>
+
+	<!-- endInfo -->
+	<div class='infoClass allDiv' id='endInfo'>
+		<div class='textDiv' id='infoTextDiv'>
+			<h1 class='infoH1'>End of the experiment</h1>
+			<p class='infoP'>Thank you very much for participating.</p>
+			<p class='infoP'>You will receive your course credit within a week. </p>
+			<p class='infoP'>If you have any questions about the experiment you can email them to schwartb@fiu.edu.</p>
+		</div>
+	</div>
+
+	<!-- consent screen-->
+	<div class='consentClass allDiv' id= 'consent'>
+		<div class='textDiv' id='consentTextDiv'>
+			<img src="FIU_logo.jpg" class='pic' id='logoPic'>
+			<h1 class="infoP">ADULT CONSENT TO PARTICIPATE IN A RESEARCH STUDY</h1>
+			<h1 class="infoP">Metacognition and learning</h1>
+
+
+			<h4 class="infoP">PURPOSE OF THE STUDY</h4>
+			<p class="infoP">You are being asked to be in a research study.  The purpose of this study is to explore what information people use when they judge what will be easy or difficult to learn. We will examine this by asking participants to judge how likely it is that they will be able to memorize English words when they are presented in different ways. After making the judgments, participants will study the words and then complete a memory test of the words.</p> 
+
+			<h4 class="infoP">NUMBER OF STUDY PARTICIPANTS</h4>
+			<p class="infoP">If you decide to be in this study, you will be one of 100 people in this research study.</p>
+
+			<h4 class="infoP">DURATION OF THE STUDY</h4>
+			<p class="infoP">Your participation will require approximately 30 minutes of time per person</p>
+
+			<h4 class="infoP">PROCEDURES</h4>
+			<p class="infoP">If you agree to be in the study, we will ask you to do the following things:<br>
+			1.	You will see a series of English words and for each one you will judge how likely it is that you will be able to learn it. <br>
+			2.	You will study each word one at a time.<br>
+			3.	You will judge the correctness of mathematical equations (e.g., 2 x 2 = 5).<br>
+			4.	You will complete a memory test in which you should type all the words you can remember from the experiment.</p> 
+
+			<h4 class="infoP">RISKS AND/OR DISCOMFORTS</h4>
+			<p class="infoP">There are no known risks to doing this experiment.</p>  
+
+			<h4 class="infoP">BENEFITS</h4>
+			<p class="infoP">The following benefits may be associated with your participation in this study:  You will assist researchers in determining how people judge, learn and remember words.  You may also enjoy testing your ability judge and memorize words.  There are no other benefits of this procedure.</p>
+
+			<h4 class="infoP">ALTERNATIVES</h4>
+			<p class="infoP">There are no known alternatives available to you other than not taking part in this study.  However, any significant new findings developed during the course of the research, which may relate to your willingness to continue participation will be provided to you.</p>  
+
+			<h4 class="infoP">CONFIDENTIALITY</h4>
+			<p class="infoP">The records of this study will be kept private and will be protected to the fullest extent provided by law. In any sort of report we might publish, we will not include any information that will make it possible to identify a subject.  Research records will be stored securely and only the researcher’s team will have access to the records.  However, your records may be reviewed for audit purposes by authorized University or other agents who will be bound by the same provisions of confidentiality.</p>
+
+			<h4 class="infoP">COMPENSATION AND COSTS</h4>
+			<p class="infoP">You will receive a payment of 1 credit for Introductory Psychology and other course in the SONA system for your participation. You will not be responsible for any costs to participate in this study.</p>  
+
+
+			<h4 class="infoP">RIGHT TO DECLINE OR WITHDRAW</h4>
+			<p class="infoP">Your participation in this study is voluntary.  You are free to participate in the study or withdraw your consent at any time during the study.  Your withdrawal or lack of participation will not affect any benefits to which you are otherwise entitled.  The investigator reserves the right to remove you without your consent at such time that they feel it is in the best interest.</p>
+
+			<h4 class="infoP">RESEARCHER CONTACT INFORMATION</h4>
+			<p class="infoP">If you have any questions about the purpose, procedures, or any other issues relating to this research study you may contact Dr. Bennett Schwartz at DM 283, 305-348-4025, schwartb@fiu.edu.</p> 
+
+			<h4 class="infoP">IRB CONTACT INFORMATION</h4>
+			<p class="infoP">If you would like to talk with someone about your rights of being a subject in this research study or about ethical issues with this research study, you may contact the FIU Office of Research Integrity by phone at 305-348-2494 or by email at ori@fiu.edu.</p>
+
+			<h4 class="infoP">PARTICIPANT AGREEMENT</h4>
+			<p class="infoP">To participate in this study, you first have to fill in the form below. Once you have done this , you can continue to the study by clicking the "Continue to the study" button. If you do not want to participate in the study, you can leave this form by either closing the page or clicking the "Cancel" button.
+			</p>
+			<form id='course_credit_form'> 
+				<p class="form_info" id='ID_info'>We only collect your panther ID and name for the purpose of logging your informed consent and giving you your course credit, after finishing the experiment. Neither your name or your panther ID will be connected to your results in the experiment in any way.</p>
+				<p>First name:</p>
+				<input type="text" id='fname'>
+				<p> Family name:</p>
+				<input type="text" id='lname'>
+				<p>Panther ID:</p>
+				<input type="text" id='pNr'> 
+			</form>
+			<form>
+			<p>I have read the information in this consent form and agree to participate in this study.</p>
+			  <input type="radio" name="consentRadio" value="no" checked>No 
+			  <br>
+			  <input type="radio" name="consentRadio" value="yes">Yes
+			</form>
+			
+		</div>
+		<div class='buttonContainer'>
+			<div class='consentFormButton' id='cancelButton'>Cancel</div>
+			<div class='consentFormButton' id='consentButton'>Continue to the study</div>
+		</div>
+	</div>
+
+	<!-- cancel screen --> 
+	<div class='cancelScreen allDiv'>
+		<div class='textDiv' id='cancelTextDiv'>
+			You have decided to cancel the study. If you have any questions about the study email these to schwartb@fiu.edu.
+		</div>
+	</div>
+
+	<!-- Background--> 
+	<div class='backgroundClass allDiv' id= 'backgroundID'>
+		<div class='textDiv' id='backgroundTextDiv'>
+			<p class="form_info">Before the experiment starts we need some background information from you.</p>
+			<p>Click the button at the bottom of the page to continue to the experiment, once you're finished with the form.</p>
+			<form>
+			<p class="form_info">1. Is this the first time you participate in this experiment?</p>
+			  Yes: <input class="ratingRadio" type="radio" name="firstTime" value="yes" checked> 
+			  No: <input class="ratingRadio" type="radio" name="firstTime" value="no">
+			</form>
+			<br>
+			<form>
+			<p class="form_info">2. What is your gender?</p>
+			  Female:<input class="ratingRadio" type="radio" name="gender" value="female"> 
+			  Male:<input class="ratingRadio" type="radio" name="gender" value="male"> 
+			  Other:<input class="ratingRadio" type="radio" name="gender" value="other">
+			</form>
+			<br>
+			<p class="form_info">3. How old are you?</p>
+			<form>
+			  <input type="text" id='age'>   
+			  <p class='exampleP'>E.g., 32.</p>
+			</form>
+			<br>
+			<form>
+			<p class="form_info">4. Are you an undergraduate psychology student at Florida International University?</p>
+			  <input type="radio" id='pop_yes' name="psych_student" value="yes" checked> Yes
+			  <input type="radio" id='pop_no' name="psych_student" value="no"> No
+			</form>
+			<br>
+			<p class="form_info">5. How many years have you played an instrument?</p>
+			<form>
+			  <input type="text" id='instrumentTime'>
+			</form>
+			<br>
+			<p class="form_info">6. How many years have you taken music lessons?</p>
+			<form>
+			  <input type="text" id='instrumentLessonTime'>
+			</form>
+			<br>
+			<p class="form_info">7. Do you currently play?</p>
+			<form>
+			  <input type="radio" name="currentlyPlaying" value="no"> No<br>
+			  <input type="radio" name="currentlyPlaying" value="yes"> Yes
+			</form>
+			<br>
+			<p class="form_info">If not, how long has it been since you stopped playing?</p>
+			<input type="backgroundText" id='timeSinceStopPlaying'>
+			<br>
+			<p class="form_info">8. Compared to all amateur musicians, on a scale of 1-10 with 10 being the most proficient, how would you rank your proficiency in:</p>
+			<p class="form_info">Playing?</p>
+			<form>
+			  1: <input class="ratingRadio" type="radio" name="playingProficiency" value="1">
+			  2: <input class="ratingRadio" type="radio" name="playingProficiency" value="2"> 
+			  3: <input class="ratingRadio" type="radio" name="playingProficiency" value="3"> 
+			  4: <input class="ratingRadio" type="radio" name="playingProficiency" value="4"> 
+			  5: <input class="ratingRadio" type="radio" name="playingProficiency" value="5">
+			  6: <input class="ratingRadio" type="radio" name="playingProficiency" value="6">
+			  7: <input class="ratingRadio" type="radio" name="playingProficiency" value="7">
+			  8: <input class="ratingRadio" type="radio" name="playingProficiency" value="8">
+			  9: <input class="ratingRadio" type="radio" name="playingProficiency" value="9">
+			  10: <input class="ratingRadio" type="radio" name="playingProficiency" value="10">
+			</form>
+			<br>
+			<p class="form_info">Sight-reading?</p>
+			<form>
+			  1: <input class="ratingRadio" type="radio" name="sightReadingProficiency" value="1">
+			  2: <input class="ratingRadio" type="radio" name="sightReadingProficiency" value="2"> 
+			  3: <input class="ratingRadio" type="radio" name="sightReadingProficiency" value="3"> 
+			  4: <input class="ratingRadio" type="radio" name="sightReadingProficiency" value="4"> 
+			  5: <input class="ratingRadio" type="radio" name="sightReadingProficiency" value="5">
+			  6: <input class="ratingRadio" type="radio" name="sightReadingProficiency" value="6">
+			  7: <input class="ratingRadio" type="radio" name="sightReadingProficiency" value="7">
+			  8: <input class="ratingRadio" type="radio" name="sightReadingProficiency" value="8">
+			  9: <input class="ratingRadio" type="radio" name="sightReadingProficiency" value="9">
+			  10: <input class="ratingRadio" type="radio" name="sightReadingProficiency" value="10">
+			</form>
+			<br>
+			<p class="form_info">Playing by ear?</p>
+			<form>
+			  1: <input class="ratingRadio" type="radio" name="byEarProficiency" value="1">
+			  2: <input class="ratingRadio" type="radio" name="byEarProficiency" value="2"> 
+			  3: <input class="ratingRadio" type="radio" name="byEarProficiency" value="3"> 
+			  4: <input class="ratingRadio" type="radio" name="byEarProficiency" value="4"> 
+			  5: <input class="ratingRadio" type="radio" name="byEarProficiency" value="5">
+			  6: <input class="ratingRadio" type="radio" name="byEarProficiency" value="6">
+			  7: <input class="ratingRadio" type="radio" name="byEarProficiency" value="7">
+			  8: <input class="ratingRadio" type="radio" name="byEarProficiency" value="8">
+			  9: <input class="ratingRadio" type="radio" name="byEarProficiency" value="9">
+			  10: <input class="ratingRadio" type="radio" name="byEarProficiency" value="10">
+			</form>
+			<br>
+			<p class="form_info">9. Have you taken any formal music theory or solfege lessons/classes?</p>
+			<form>
+			  <input type="radio" name="musicTheory" value="no"> No<br>
+			  <input type="radio" name="musicTheory" value="yes"> Yes
+			</form>
+			<br>
+			<p class="form_info">If yes, please specify.</p>
+			<textarea type="backgroundText" id='musicTheoryText'></textarea>
+			<br>
+			<p class="form_info">10. Do you play more than one instruments?</p>
+			<form>
+			  <input type="radio" name="otherInstrument" value="no"> No<br>
+			  <input type="radio" name="otherInstrument" value="yes"> Yes
+			</form>
+			<br>
+			<p class="form_info">If yes, please list each one and say how long you have played it.</p>
+			<textarea type="backgroundText" id='otherInstrumentText'></textarea>              
+		</div>
+		<div class='button' id='button'>Continue</div>
+	</div>
+	<!-- Test -->
+	<div class='outerStim allDiv' id='outerTest'>
+	  	<div class='middleStim' id='middleTest'>
+	  		<div class='ratingQuestionText' id='testQuestion'>Old or new?</div>
+	  		<div class='imageStimContainer' id='testStimContainer'>
+	  			<!-- images are dynamically added here -->
+	  		</div>
+	  		<div class='buttonContainer'>
+		  		<div class='testButton' id=testOldButton>Old</div>
+		  		<div class='testButton' id=testNewButton>New</div>
+	  		</div> 
+		</div>
+	</div>
+	<!-- studyRating --> 
+	<div class='outerStim allDiv' id='outerStudyRating'>
+	  	<div class='middleStim' id='middleStudyRating'>
+	  		<div class='timeLeftClass' id='ratingTime'></div>
+	  		<div class='ratingQuestionText' id='ratingQuestion'>How likely is it that you will recognize this on the test?</div>
+	  		<div class='imageStimContainer' id='studyRatingStimContainer'>
+	  			<!-- images are dynamically added here -->
+	  		</div>
+	  		<div class='buttonContainer' id='ratingButtonContainer'>
+		  		<div class='ratingButton' id=ratingB0>0%</div>
+		  		<div class='ratingButton' id=ratingB20>20%</div>
+		  		<div class='ratingButton' id=ratingB40>40%</div>
+		  		<div class='ratingButton' id=ratingB60>60%</div>
+		  		<div class='ratingButton' id=ratingB80>80%</div>
+		  		<div class='ratingButton' id=ratingB100>100%</div>
+	  		</div> 
+		</div>
+	</div> 
+	<!-- note reading test --> 
+	<div class='outerStim allDiv' id='outerNoteReading'>
+	  	<div class='middleStim' id='middleNoteReading'>
+	  		<div class='timeLeftClass' id='noteReadingTime'></div>
+	  		<div class='noteReadingQuestion' id='noteReadingQuestionID'>Press the buttons in the correct order.</div>
+	  		<div class='imageStimContainer' id='noteReadingStimContainer'>
+	  			<!-- images are dynamically added here -->
+	  		</div>
+	  		<div class='buttonContainer' id='noteButtonContainer'>
+		  		<div class='noteButton' id=noteA>A</div>
+		  		<div class='noteButton' id=noteB>B</div>
+		  		<div class='noteButton' id=noteC>C</div>
+		  		<div class='noteButton' id=noteD>D</div>
+		  		<div class='noteButton' id=noteE>E</div>
+		  		<div class='noteButton' id=noteF>F</div>
+		  		<div class='noteButton' id=noteG>G</div>
+	  		</div> 
+	  		<div class='noteReadingRespClass' id='noteReadingRespID'></div>
+		</div>
+	</div> 
+	<!-- Distraction -->
+	<div class='outerStim allDiv' id='outerDist'>
+	  	<div class='middleStim' id='middleDist'>
+	  		<div class='ratingQuestionText' id='distQuestion'>Is the equation correct?</div>
+	  		<div class='stim' id='distStim'>Hide later</div>
+	  		<div class='buttonContainer'>
+		  		<div class='distButton' id=distYes>Yes</div>
+		  		<div class='distButton' id=distNo>No</div>
+	  		</div> 	  		
+		</div>
+	</div>	
+</body>
+</html>

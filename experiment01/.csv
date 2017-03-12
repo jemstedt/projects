@@ -1,0 +1,17 @@
+ItemNr,Item,ItemDiff,List,ListPart
+1,"rund - boll",1,A,fir
+2,"baby - liten",2,A,fir
+3,"affär - mjölk",2,A,sec
+4,"bla - blu",3,A,sec
+5,"blå - jeans",2,B,fir
+6,"fjäril - tumme",2,B,fir
+7,"flicka - fiske",2,B,sec
+8,"ple - ble",2,B,sec
+A,x,"rund - boll",3,0,296,0,504,"rund - boll",5,"rund - boll",29,rund,boll,,0,34255
+1,x,x,x,2,"baby - liten",2,A,x,"baby - liten",5,20,206,4,502,"baby - liten",4,"baby - liten",22,baby,liten,,0,34255
+2,x,x,x,3,"affär - mjölk",2,A,x,"affär - mjölk",1,0,1006,3,506,"affär - mjölk",0,"affär - mjölk",1626,affär,mjölk,hej,x,34255
+3,x,x,x,4,"bla - blu",3,A,x,"bla - blu",4,0,269,7,503,"bla - blu",7,"bla - blu",39,bla,blu,,0,34255
+4,x,x,x,5,"blå - jeans",2,B,x,"blå - jeans",0,0,1397,1,501,"blå - jeans",6,"blå - jeans",50,blå,jeans,,0,34255
+5,x,x,x,6,"fjäril - tumme",2,B,x,"fjäril - tumme",2,20,337,2,503,"fjäril - tumme",1,"fjäril - tumme",739,fjäril,tumme,test,x,34255
+6,x,x,x,7,"flicka - fiske",2,B,x,"flicka - fiske",7,0,245,5,502,"flicka - fiske",3,"flicka - fiske",176,flicka,fiske,,0,34255
+7,x,x,x,8,"ple - ble",2,B,x,"ple - ble",6,40,237,6,505,"ple - ble",2,"ple - ble",1943,ple,ble,tre,x,34255
